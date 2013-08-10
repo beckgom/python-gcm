@@ -242,6 +242,9 @@ class GCM(object):
         :raises GCMMissingRegistrationException: if the list of registration_ids exceeds 1000 items
         """
 
+        if isinstance(registration_ids, str):
+            registration_ids = list(registration_ids)
+            
         if not registration_ids:
             raise GCMMissingRegistrationException("Missing registration_ids")
         if len(registration_ids) > 1000:

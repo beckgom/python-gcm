@@ -78,7 +78,7 @@ class GCMTest(unittest.TestCase):
     def test_plaintext_payload(self):
         result = self.gcm.construct_payload(registration_ids='1234', data=self.data, is_json=False)
 
-        self.assertIn('registration_id', result)
+        self.assertIn('registration_ids', result)
         self.assertIn('data.param1', result)
         self.assertIn('data.param2', result)
 
